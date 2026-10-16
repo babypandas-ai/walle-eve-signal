@@ -1,0 +1,828 @@
+{
+  "mission": "Decoy gauntlet",
+  "agent": "bayesian-naive",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": false,
+    "time_used": 391,
+    "time_budget": 400,
+    "battery_remaining": 100.0,
+    "battery_consumed": 426.0,
+    "scans": 60,
+    "recharges": 25,
+    "distance_travelled": 306
+  },
+  "evidence": {
+    "clues": [],
+    "signal": {
+      "scans": 60,
+      "detections": 45,
+      "no_signal": 15,
+      "strongest": {
+        "t": 88,
+        "position": [
+          0,
+          18
+        ],
+        "detected": true,
+        "strength": 80.6,
+        "bearing_deg": 13.0,
+        "auth": 0.32,
+        "spoof_prob": 0.0,
+        "spoof_prob_hindsight": 0.0
+      },
+      "suspected_spoofs": [],
+      "learned_spoof_rate": 0.0,
+      "suspected_decoy_transmitter": null
+    }
+  },
+  "inference": {
+    "eve_location": [
+      5,
+      13
+    ],
+    "p_at_cell": 0.421,
+    "p_within_1_cell": 0.848,
+    "credible_region_90_cells": 6,
+    "posterior_mean": [
+      4.94,
+      12.58
+    ],
+    "status": "damaged",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 0.0,
+      "damaged": 1.0
+    }
+  },
+  "confidence": {
+    "location": 0.848,
+    "location_label": "HIGH",
+    "status": 1.0,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "Recharge at (2, 6), then travel directly to (5, 13) (P(EVE within 1 cell) = 0.85) and scan on arrival.",
+  "strategy_changes": [
+    {
+      "t": 10,
+      "kind": "retarget",
+      "from": [
+        15,
+        4
+      ],
+      "to": [
+        8,
+        12
+      ],
+      "reason": "belief shifted 3.34 nats since plan",
+      "position": [
+        3,
+        3
+      ]
+    },
+    {
+      "t": 21,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.28",
+      "position": [
+        3,
+        11
+      ]
+    },
+    {
+      "t": 21,
+      "kind": "retarget",
+      "from": [
+        8,
+        12
+      ],
+      "to": [
+        3,
+        16
+      ],
+      "reason": "belief shifted 1.84 nats since plan",
+      "position": [
+        3,
+        11
+      ]
+    },
+    {
+      "t": 27,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "EXPLORE",
+      "reason": "P(EVE near target)=0.21",
+      "position": [
+        3,
+        16
+      ]
+    },
+    {
+      "t": 28,
+      "kind": "retarget",
+      "from": [
+        0,
+        16
+      ],
+      "to": [
+        5,
+        18
+      ],
+      "reason": "planned route blocked by newly seen wall",
+      "position": [
+        2,
+        16
+      ]
+    },
+    {
+      "t": 32,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.28",
+      "position": [
+        4,
+        18
+      ]
+    },
+    {
+      "t": 32,
+      "kind": "retarget",
+      "from": [
+        5,
+        18
+      ],
+      "to": [
+        6,
+        17
+      ],
+      "reason": "belief shifted 0.49 nats since plan",
+      "position": [
+        4,
+        18
+      ]
+    },
+    {
+      "t": 39,
+      "kind": "retarget",
+      "from": [
+        9,
+        18
+      ],
+      "to": [
+        11,
+        19
+      ],
+      "reason": "belief shifted 0.59 nats since plan",
+      "position": [
+        8,
+        18
+      ]
+    },
+    {
+      "t": 44,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "RECHARGE",
+      "reason": "Battery 30.0 only covers return trip (22.0) + reserve 6.0",
+      "position": [
+        11,
+        19
+      ]
+    },
+    {
+      "t": 71,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 71,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.41",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 76,
+      "kind": "retarget",
+      "from": [
+        9,
+        15
+      ],
+      "to": [
+        0,
+        18
+      ],
+      "reason": "belief shifted 0.58 nats since plan",
+      "position": [
+        2,
+        10
+      ]
+    },
+    {
+      "t": 99,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "EXPLORE",
+      "reason": "P(EVE near target)=0.11",
+      "position": [
+        1,
+        13
+      ]
+    },
+    {
+      "t": 99,
+      "kind": "retarget",
+      "from": [
+        2,
+        11
+      ],
+      "to": [
+        5,
+        12
+      ],
+      "reason": "belief shifted 2.01 nats since plan",
+      "position": [
+        1,
+        13
+      ]
+    },
+    {
+      "t": 105,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.32",
+      "position": [
+        5,
+        12
+      ]
+    },
+    {
+      "t": 125,
+      "kind": "retarget",
+      "from": [
+        0,
+        9
+      ],
+      "to": [
+        0,
+        8
+      ],
+      "reason": "belief shifted 0.53 nats since plan",
+      "position": [
+        1,
+        11
+      ]
+    },
+    {
+      "t": 128,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "EXPLORE",
+      "reason": "P(EVE near target)=0.19",
+      "position": [
+        0,
+        9
+      ]
+    },
+    {
+      "t": 128,
+      "kind": "retarget",
+      "from": [
+        0,
+        8
+      ],
+      "to": [
+        6,
+        10
+      ],
+      "reason": "belief shifted 0.49 nats since plan",
+      "position": [
+        0,
+        9
+      ]
+    },
+    {
+      "t": 134,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (4,17) (utility 0.281) is out of range on current battery 24; recharging first",
+      "position": [
+        4,
+        10
+      ]
+    },
+    {
+      "t": 145,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 145,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.71",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 155,
+      "kind": "retarget",
+      "from": [
+        3,
+        18
+      ],
+      "to": [
+        3,
+        17
+      ],
+      "reason": "belief shifted 0.58 nats since plan",
+      "position": [
+        2,
+        16
+      ]
+    },
+    {
+      "t": 160,
+      "kind": "retarget",
+      "from": [
+        1,
+        18
+      ],
+      "to": [
+        0,
+        18
+      ],
+      "reason": "belief shifted 1.18 nats since plan",
+      "position": [
+        1,
+        17
+      ]
+    },
+    {
+      "t": 161,
+      "kind": "retarget",
+      "from": [
+        0,
+        18
+      ],
+      "to": [
+        6,
+        15
+      ],
+      "reason": "belief shifted 0.52 nats since plan",
+      "position": [
+        1,
+        18
+      ]
+    },
+    {
+      "t": 167,
+      "kind": "retarget",
+      "from": [
+        6,
+        15
+      ],
+      "to": [
+        6,
+        16
+      ],
+      "reason": "belief shifted 0.69 nats since plan",
+      "position": [
+        4,
+        15
+      ]
+    },
+    {
+      "t": 169,
+      "kind": "retarget",
+      "from": [
+        6,
+        16
+      ],
+      "to": [
+        4,
+        18
+      ],
+      "reason": "belief shifted 0.48 nats since plan",
+      "position": [
+        5,
+        16
+      ]
+    },
+    {
+      "t": 186,
+      "kind": "retarget",
+      "from": [
+        6,
+        14
+      ],
+      "to": [
+        6,
+        17
+      ],
+      "reason": "belief shifted 2.51 nats since plan",
+      "position": [
+        5,
+        14
+      ]
+    },
+    {
+      "t": 189,
+      "kind": "retarget",
+      "from": [
+        6,
+        17
+      ],
+      "to": [
+        6,
+        18
+      ],
+      "reason": "belief shifted 0.54 nats since plan",
+      "position": [
+        5,
+        17
+      ]
+    },
+    {
+      "t": 196,
+      "kind": "retarget",
+      "from": [
+        7,
+        13
+      ],
+      "to": [
+        8,
+        12
+      ],
+      "reason": "belief shifted 0.56 nats since plan",
+      "position": [
+        6,
+        14
+      ]
+    },
+    {
+      "t": 199,
+      "kind": "retarget",
+      "from": [
+        8,
+        12
+      ],
+      "to": [
+        2,
+        12
+      ],
+      "reason": "belief shifted 1.76 nats since plan",
+      "position": [
+        6,
+        12
+      ]
+    },
+    {
+      "t": 202,
+      "kind": "retarget",
+      "from": [
+        2,
+        12
+      ],
+      "to": [
+        1,
+        11
+      ],
+      "reason": "belief shifted 0.62 nats since plan",
+      "position": [
+        3,
+        12
+      ]
+    },
+    {
+      "t": 203,
+      "kind": "retarget",
+      "from": [
+        1,
+        11
+      ],
+      "to": [
+        1,
+        10
+      ],
+      "reason": "belief shifted 0.68 nats since plan",
+      "position": [
+        2,
+        12
+      ]
+    },
+    {
+      "t": 205,
+      "kind": "retarget",
+      "from": [
+        1,
+        10
+      ],
+      "to": [
+        2,
+        9
+      ],
+      "reason": "belief shifted 0.62 nats since plan",
+      "position": [
+        1,
+        11
+      ]
+    },
+    {
+      "t": 212,
+      "kind": "retarget",
+      "from": [
+        4,
+        10
+      ],
+      "to": [
+        2,
+        15
+      ],
+      "reason": "belief shifted 0.71 nats since plan",
+      "position": [
+        3,
+        10
+      ]
+    },
+    {
+      "t": 219,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "RECHARGE",
+      "reason": "Battery 17.0 only covers return trip (9.0) + reserve 6.0",
+      "position": [
+        2,
+        15
+      ]
+    },
+    {
+      "t": 233,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 234,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.86",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 243,
+      "kind": "retarget",
+      "from": [
+        1,
+        16
+      ],
+      "to": [
+        2,
+        16
+      ],
+      "reason": "belief shifted 0.93 nats since plan",
+      "position": [
+        1,
+        14
+      ]
+    },
+    {
+      "t": 245,
+      "kind": "retarget",
+      "from": [
+        2,
+        16
+      ],
+      "to": [
+        5,
+        10
+      ],
+      "reason": "belief shifted 1.24 nats since plan",
+      "position": [
+        1,
+        15
+      ]
+    },
+    {
+      "t": 254,
+      "kind": "retarget",
+      "from": [
+        5,
+        10
+      ],
+      "to": [
+        2,
+        17
+      ],
+      "reason": "belief shifted 1.40 nats since plan",
+      "position": [
+        4,
+        10
+      ]
+    },
+    {
+      "t": 263,
+      "kind": "retarget",
+      "from": [
+        2,
+        17
+      ],
+      "to": [
+        1,
+        18
+      ],
+      "reason": "belief shifted 1.36 nats since plan",
+      "position": [
+        2,
+        16
+      ]
+    },
+    {
+      "t": 275,
+      "kind": "retarget",
+      "from": [
+        4,
+        13
+      ],
+      "to": [
+        7,
+        10
+      ],
+      "reason": "belief shifted 0.83 nats since plan",
+      "position": [
+        3,
+        13
+      ]
+    },
+    {
+      "t": 279,
+      "kind": "retarget",
+      "from": [
+        7,
+        10
+      ],
+      "to": [
+        4,
+        18
+      ],
+      "reason": "belief shifted 0.51 nats since plan",
+      "position": [
+        5,
+        11
+      ]
+    },
+    {
+      "t": 286,
+      "kind": "retarget",
+      "from": [
+        4,
+        18
+      ],
+      "to": [
+        3,
+        17
+      ],
+      "reason": "belief shifted 1.28 nats since plan",
+      "position": [
+        4,
+        16
+      ]
+    },
+    {
+      "t": 298,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "RECHARGE",
+      "reason": "Battery 21.0 only covers return trip (13.0) + reserve 6.0",
+      "position": [
+        1,
+        18
+      ]
+    },
+    {
+      "t": 316,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 316,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=1.00",
+      "position": [
+        2,
+        6
+      ]
+    },
+    {
+      "t": 356,
+      "kind": "retarget",
+      "from": [
+        3,
+        17
+      ],
+      "to": [
+        1,
+        18
+      ],
+      "reason": "belief shifted 0.68 nats since plan",
+      "position": [
+        2,
+        17
+      ]
+    },
+    {
+      "t": 370,
+      "kind": "retarget",
+      "from": [
+        1,
+        12
+      ],
+      "to": [
+        1,
+        11
+      ],
+      "reason": "belief shifted 1.32 nats since plan",
+      "position": [
+        2,
+        12
+      ]
+    },
+    {
+      "t": 377,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "RECHARGE",
+      "reason": "Best target (5,13) (utility 0.350) is out of range on current battery 21; recharging first",
+      "position": [
+        1,
+        14
+      ]
+    },
+    {
+      "t": 391,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        6
+      ]
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": false,
+    "location_error_cells": 21.84,
+    "status_correct": false,
+    "true_position": [
+      26,
+      7
+    ],
+    "true_status": "low_power",
+    "clues_found": "0/6",
+    "decoy_readings_received": 45,
+    "decoy_readings_flagged": 0,
+    "genuine_readings_flagged": 0
+  }
+}

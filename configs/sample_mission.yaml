@@ -1,0 +1,81 @@
+# ---------------------------------------------------------------------------
+# WALL-E & EVE's Signal - hand-built sample mission
+#
+# EVE went dark somewhere in the ruined downtown after a dust storm. WALL-E's
+# receiver caught one faint, stale ping before the storm cut out. An old
+# Buy-n-Large billboard beacon in the south-east still broadcasts a spoofed
+# EVE handshake, and the storm left rubble fields that drain battery.
+#
+# Map legend:  . open   # wall / collapsed building   ~ rubble (costly)
+#              C charging station   S start (WALL-E's truck, also a charger)
+# EVE's true position/status, clue positions and decoys are ground truth for
+# the simulator only - the agent never reads them.
+# ---------------------------------------------------------------------------
+mission:
+  name: "Downtown after the dust storm"
+  seed: 7
+
+map:
+  layout: |
+    ................................
+    .S......###.......~~~...........
+    ........###.......~~~....####...
+    ..##....###..............####...
+    ..##.............###.....####...
+    .........~~~.....###............
+    ....#....~~~..........~~~.......
+    ....#.........###.....~~~...##..
+    ....#.........###...........##..
+    ........###.............#.......
+    ..~~....###......C......#.......
+    ..~~....###.............#....~~.
+    ...............###...........~~.
+    ......###......###..~~~.........
+    ......###...........~~~....###..
+    .............##............###..
+    ...~~~.......##.................
+    ...~~~..............###.........
+    ....................###.......C.
+    ................................
+
+eve:
+  position: [27, 5]
+  status: low_power          # active | low_power | damaged
+
+initial_signal:              # the ping that started the mission
+  bearing_deg: 80            # compass degrees: 0=N, 90=E
+  strength: 12.5             # dB-like units; noise floor is 8
+  timestamp: -20             # 20 time units before mission start (stale -> less trusted)
+  # coordinates: [26, 6]     # optional rough fix ...
+  # uncertainty: 6           # ... with its radius in cells
+
+resources:
+  battery_capacity: 100
+  initial_battery: 70
+  time_budget: 400
+  costs:
+    move: 1.0                # battery per step on open ground (1 time unit)
+    move_rubble: 3.0         # battery per step into rubble (2 time units)
+    scan: 2.0                # one receiver sweep + clue search (1 time unit)
+    recharge_rate: 20.0      # battery gained per time unit at a charger
+    blocked: 0.5             # cost of bumping into an unseen wall
+
+sensors:
+  sight_radius: 2            # terrain revealed around WALL-E every step
+  scan_radius: 3             # clues detectable within this distance when scanning
+  clue_detect_prob: 0.85     # chance a clue in range is noticed (noisy sensor)
+  contact_radius: 1          # EVE seen automatically when this close
+  contact_status_accuracy: 0.95
+
+clues:                       # positions only; content is generated from the truth
+  - {id: tracks-1, type: hover_tracks, position: [16, 9]}
+  - {id: cell-1,   type: power_cell,   position: [23, 9]}
+  - {id: log-1,    type: beacon_log,   position: [12, 2]}
+  - {id: plant,    type: plant,        position: [25, 6]}
+  - {id: tracks-2, type: hover_tracks, position: [21, 2]}
+
+decoys:                      # spoofed EVE handshakes (the agent must infer these exist)
+  - {position: [25, 16], power: 74, rate: 0.35}
+
+agent:                       # optional overrides of BayesianAgent hyper-parameters
+  safety_margin: 6

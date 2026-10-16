@@ -1,0 +1,16 @@
+[project]
+name = "walle-eve-signal"
+version = "1.0.0"
+description = "Autonomous Bayesian search agent: WALL-E looks for EVE in a simulated, partially observable world"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pyyaml>=6.0", "matplotlib>=3.7", "pillow>=9.0"]
+
+[project.scripts]
+walle = "walle.cli:main"
+
+[tool.setuptools]
+packages = ["walle"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

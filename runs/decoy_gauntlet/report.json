@@ -1,0 +1,222 @@
+{
+  "mission": "Decoy gauntlet",
+  "agent": "bayesian",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": true,
+    "time_used": 77,
+    "time_budget": 400,
+    "battery_remaining": 78.0,
+    "battery_consumed": 84.0,
+    "scans": 9,
+    "recharges": 5,
+    "distance_travelled": 60
+  },
+  "evidence": {
+    "clues": [
+      {
+        "id": "clue4",
+        "type": "beacon_log",
+        "position": [
+          17,
+          9
+        ],
+        "description": "Corrupted beacon log fragment: EVE y in [7, 12]",
+        "t": 28
+      },
+      {
+        "id": "contact",
+        "type": "visual_contact",
+        "position": [
+          26,
+          7
+        ],
+        "description": "Visual contact, EVE looks low_power",
+        "t": 77
+      }
+    ],
+    "signal": {
+      "scans": 9,
+      "detections": 7,
+      "no_signal": 2,
+      "strongest": {
+        "t": 10,
+        "position": [
+          4,
+          10
+        ],
+        "detected": true,
+        "strength": 50.65,
+        "bearing_deg": 240.3,
+        "auth": 0.55,
+        "spoof_prob": 0.951,
+        "spoof_prob_hindsight": 1.0
+      },
+      "suspected_spoofs": [
+        {
+          "t": 10,
+          "position": [
+            4,
+            10
+          ],
+          "detected": true,
+          "strength": 50.65,
+          "bearing_deg": 240.3,
+          "auth": 0.55,
+          "spoof_prob": 0.951,
+          "spoof_prob_hindsight": 1.0
+        },
+        {
+          "t": 18,
+          "position": [
+            9,
+            9
+          ],
+          "detected": true,
+          "strength": 24.26,
+          "bearing_deg": 216.1,
+          "auth": 0.29,
+          "spoof_prob": 0.978,
+          "spoof_prob_hindsight": 1.0
+        },
+        {
+          "t": 35,
+          "position": [
+            20,
+            11
+          ],
+          "detected": true,
+          "strength": 16.02,
+          "bearing_deg": 254.2,
+          "auth": 0.55,
+          "spoof_prob": 0.973,
+          "spoof_prob_hindsight": 0.993
+        },
+        {
+          "t": 67,
+          "position": [
+            27,
+            14
+          ],
+          "detected": true,
+          "strength": 8.26,
+          "bearing_deg": 274.6,
+          "auth": 0.32,
+          "spoof_prob": 1.0,
+          "spoof_prob_hindsight": 1.0
+        }
+      ],
+      "learned_spoof_rate": 0.33,
+      "suspected_decoy_transmitter": {
+        "position": [
+          2,
+          18
+        ],
+        "p_within_1": 0.458
+      }
+    }
+  },
+  "inference": {
+    "eve_location": [
+      26,
+      7
+    ],
+    "p_at_cell": 1.0,
+    "p_within_1_cell": 1.0,
+    "credible_region_90_cells": 1,
+    "posterior_mean": [
+      26.0,
+      7.0
+    ],
+    "status": "low_power",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 1.0,
+      "damaged": 0.0
+    }
+  },
+  "confidence": {
+    "location": 1.0,
+    "location_label": "HIGH",
+    "status": 1.0,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "EVE is in low-power standby at (26, 7). Carry her to the nearest charger (29, 19) (~12 cells) and recharge her before attempting to wake her.",
+  "strategy_changes": [
+    {
+      "t": 28,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.25",
+      "position": [
+        16,
+        9
+      ]
+    },
+    {
+      "t": 40,
+      "kind": "mode",
+      "from": "PURSUE",
+      "to": "RECHARGE",
+      "reason": "Best target (27,8) (utility 0.256) is out of range on current battery 31; recharging first",
+      "position": [
+        24,
+        11
+      ]
+    },
+    {
+      "t": 58,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        29,
+        19
+      ]
+    },
+    {
+      "t": 58,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.69",
+      "position": [
+        29,
+        19
+      ]
+    },
+    {
+      "t": 75,
+      "kind": "retarget",
+      "from": [
+        26,
+        8
+      ],
+      "to": [
+        26,
+        7
+      ],
+      "reason": "belief shifted 0.66 nats since plan",
+      "position": [
+        26,
+        10
+      ]
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": true,
+    "location_error_cells": 0.0,
+    "status_correct": true,
+    "true_position": [
+      26,
+      7
+    ],
+    "true_status": "low_power",
+    "clues_found": "1/6",
+    "decoy_readings_received": 5,
+    "decoy_readings_flagged": 4,
+    "genuine_readings_flagged": 0
+  }
+}

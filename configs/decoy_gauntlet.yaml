@@ -1,0 +1,58 @@
+# Two strong spoofing transmitters sit right next to WALL-E's truck and capture
+# ~60% of scans; EVE is low on power and far away. Generated with
+#   python -m walle generate --seed 1000 --decoys 2 ...   (benchmark tier "decoys")
+# Compare: python -m walle run configs/decoy_gauntlet.yaml --agent bayesian-naive
+mission: {name: Decoy gauntlet, seed: 1000}
+map:
+  layout: |-
+    ....................###.......
+    .................~~.###.......
+    ................~~~....#####..
+    .....######..........~.#####..
+    .....######.......####.#####..
+    ...#~~~~..........####~.##....
+    ..S#####~.........#####.......
+    ...#...~~..........####.......
+    ....~~................###.....
+    ....~###........~.....###.....
+    ......~.........~~....###.....
+    ................~~.......#....
+    #...............~........###..
+    #..............~..............
+    #.........................~.~~
+    .......##............##....~~~
+    #..................~~##.....~~
+    #.........####......~~........
+    ..........####.......~........
+    .................####........C
+eve:
+  position: [26, 7]
+  status: low_power
+initial_signal: {bearing_deg: 90.2, strength: 8.0, timestamp: -11}
+resources: {battery_capacity: 100.0, initial_battery: 80.0, time_budget: 400}
+clues:
+- id: clue1
+  type: hover_tracks
+  position: [22, 4]
+- id: clue2
+  type: power_cell
+  position: [29, 6]
+- id: clue3
+  type: beacon_log
+  position: [17, 5]
+- id: clue4
+  type: beacon_log
+  position: [17, 9]
+- id: clue5
+  type: plant
+  position: [23, 7]
+- id: clue6
+  type: beacon_log
+  position: [13, 1]
+decoys:
+- position: [0, 18]
+  power: 78.3
+  rate: 0.4
+- position: [2, 12]
+  power: 79.1
+  rate: 0.4

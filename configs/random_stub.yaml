@@ -1,0 +1,13 @@
+# Minimal config: let the generator build the world from a seed, then override
+# anything you like. Every key from sample_mission.yaml may be added here.
+mission:
+  name: "Procedural wasteland"
+  seed: 2024
+generate:
+  width: 34
+  height: 22
+  n_clues: 5
+  n_decoys: 1
+  eve_status: damaged
+resources:
+  initial_battery: 65

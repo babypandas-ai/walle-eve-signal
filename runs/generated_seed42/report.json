@@ -1,0 +1,205 @@
+{
+  "mission": "Generated mission #42 (JSON example)",
+  "agent": "bayesian",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": true,
+    "time_used": 44,
+    "time_budget": 400,
+    "battery_remaining": 30.0,
+    "battery_consumed": 50.0,
+    "scans": 6,
+    "recharges": 0,
+    "distance_travelled": 38
+  },
+  "evidence": {
+    "clues": [
+      {
+        "id": "clue4",
+        "type": "hover_tracks",
+        "position": [
+          24,
+          12
+        ],
+        "description": "Fresh hover-scorch tracks pointing ~36 deg",
+        "t": 32
+      },
+      {
+        "id": "clue2",
+        "type": "beacon_log",
+        "position": [
+          29,
+          8
+        ],
+        "description": "Corrupted beacon log fragment: EVE x in [25, 30]",
+        "t": 39
+      },
+      {
+        "id": "contact",
+        "type": "visual_contact",
+        "position": [
+          28,
+          3
+        ],
+        "description": "Visual contact, EVE looks damaged",
+        "t": 44
+      }
+    ],
+    "signal": {
+      "scans": 6,
+      "detections": 2,
+      "no_signal": 4,
+      "strongest": {
+        "t": 32,
+        "position": [
+          23,
+          10
+        ],
+        "detected": true,
+        "strength": 35.72,
+        "bearing_deg": 197.9,
+        "auth": 0.37,
+        "spoof_prob": 0.844,
+        "spoof_prob_hindsight": 1.0
+      },
+      "suspected_spoofs": [
+        {
+          "t": 32,
+          "position": [
+            23,
+            10
+          ],
+          "detected": true,
+          "strength": 35.72,
+          "bearing_deg": 197.9,
+          "auth": 0.37,
+          "spoof_prob": 0.844,
+          "spoof_prob_hindsight": 1.0
+        }
+      ],
+      "learned_spoof_rate": 0.193,
+      "suspected_decoy_transmitter": null
+    }
+  },
+  "inference": {
+    "eve_location": [
+      28,
+      3
+    ],
+    "p_at_cell": 1.0,
+    "p_within_1_cell": 1.0,
+    "credible_region_90_cells": 1,
+    "posterior_mean": [
+      28.0,
+      3.0
+    ],
+    "status": "damaged",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 0.0,
+      "damaged": 1.0
+    }
+  },
+  "confidence": {
+    "location": 1.0,
+    "location_label": "HIGH",
+    "status": 1.0,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "EVE is damaged at (28, 3). Stabilise her, avoid rubble on the way back, and carry her to the truck at (4, 8) for repairs.",
+  "strategy_changes": [
+    {
+      "t": 7,
+      "kind": "retarget",
+      "from": [
+        12,
+        7
+      ],
+      "to": [
+        11,
+        11
+      ],
+      "reason": "belief shifted 0.47 nats since plan",
+      "position": [
+        9,
+        7
+      ]
+    },
+    {
+      "t": 32,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.35",
+      "position": [
+        23,
+        10
+      ]
+    },
+    {
+      "t": 35,
+      "kind": "retarget",
+      "from": [
+        26,
+        9
+      ],
+      "to": [
+        28,
+        8
+      ],
+      "reason": "belief shifted 0.45 nats since plan",
+      "position": [
+        26,
+        10
+      ]
+    },
+    {
+      "t": 39,
+      "kind": "retarget",
+      "from": [
+        28,
+        8
+      ],
+      "to": [
+        28,
+        5
+      ],
+      "reason": "new clue found",
+      "position": [
+        27,
+        8
+      ]
+    },
+    {
+      "t": 42,
+      "kind": "retarget",
+      "from": [
+        28,
+        5
+      ],
+      "to": [
+        28,
+        3
+      ],
+      "reason": "belief shifted 0.60 nats since plan",
+      "position": [
+        28,
+        6
+      ]
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": true,
+    "location_error_cells": 0.0,
+    "status_correct": true,
+    "true_position": [
+      28,
+      3
+    ],
+    "true_status": "damaged",
+    "clues_found": "2/6",
+    "decoy_readings_received": 1,
+    "decoy_readings_flagged": 1,
+    "genuine_readings_flagged": 0
+  }
+}

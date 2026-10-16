@@ -1,0 +1,7 @@
+numpy>=1.24
+pyyaml>=6.0
+matplotlib>=3.7
+pillow>=9.0
+pytest>=7.0
+# optional: only needed for the LLM planner (--agent llm)
+# anthropic

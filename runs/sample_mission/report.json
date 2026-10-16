@@ -1,0 +1,269 @@
+{
+  "mission": "Downtown after the dust storm",
+  "agent": "bayesian",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": true,
+    "time_used": 67,
+    "time_budget": 400,
+    "battery_remaining": 82.0,
+    "battery_consumed": 69.0,
+    "scans": 7,
+    "recharges": 5,
+    "distance_travelled": 55
+  },
+  "evidence": {
+    "clues": [
+      {
+        "id": "log-1",
+        "type": "beacon_log",
+        "position": [
+          12,
+          2
+        ],
+        "description": "Corrupted beacon log fragment: EVE y in [3, 8]",
+        "t": 26
+      },
+      {
+        "id": "plant",
+        "type": "plant",
+        "position": [
+          25,
+          6
+        ],
+        "description": "A seedling in an old boot! EVE must be within 4 cells",
+        "t": 63
+      },
+      {
+        "id": "tracks-2",
+        "type": "hover_tracks",
+        "position": [
+          21,
+          2
+        ],
+        "description": "Fresh hover-scorch tracks pointing ~118 deg",
+        "t": 63
+      },
+      {
+        "id": "contact",
+        "type": "visual_contact",
+        "position": [
+          27,
+          5
+        ],
+        "description": "Visual contact, EVE looks low_power",
+        "t": 67
+      }
+    ],
+    "signal": {
+      "scans": 7,
+      "detections": 4,
+      "no_signal": 3,
+      "strongest": {
+        "t": 33,
+        "position": [
+          18,
+          6
+        ],
+        "detected": true,
+        "strength": 17.45,
+        "bearing_deg": 12.8,
+        "auth": 0.37,
+        "spoof_prob": 0.836,
+        "spoof_prob_hindsight": 0.938
+      },
+      "suspected_spoofs": [
+        {
+          "t": 26,
+          "position": [
+            14,
+            4
+          ],
+          "detected": true,
+          "strength": 12.65,
+          "bearing_deg": 144.4,
+          "auth": 0.2,
+          "spoof_prob": 0.936,
+          "spoof_prob_hindsight": 1.0
+        },
+        {
+          "t": 33,
+          "position": [
+            18,
+            6
+          ],
+          "detected": true,
+          "strength": 17.45,
+          "bearing_deg": 12.8,
+          "auth": 0.37,
+          "spoof_prob": 0.836,
+          "spoof_prob_hindsight": 0.938
+        },
+        {
+          "t": 63,
+          "position": [
+            23,
+            4
+          ],
+          "detected": true,
+          "strength": 15.79,
+          "bearing_deg": 170.2,
+          "auth": 0.53,
+          "spoof_prob": 0.981,
+          "spoof_prob_hindsight": 1.0
+        }
+      ],
+      "learned_spoof_rate": 0.294,
+      "suspected_decoy_transmitter": {
+        "position": [
+          27,
+          19
+        ],
+        "p_within_1": 0.475
+      }
+    }
+  },
+  "inference": {
+    "eve_location": [
+      27,
+      5
+    ],
+    "p_at_cell": 1.0,
+    "p_within_1_cell": 1.0,
+    "credible_region_90_cells": 1,
+    "posterior_mean": [
+      27.0,
+      5.0
+    ],
+    "status": "low_power",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 0.996,
+      "damaged": 0.004
+    }
+  },
+  "confidence": {
+    "location": 1.0,
+    "location_label": "HIGH",
+    "status": 0.996,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "EVE is in low-power standby at (27, 5). Carry her to the nearest charger (17, 10) (~11 cells) and recharge her before attempting to wake her.",
+  "strategy_changes": [
+    {
+      "t": 8,
+      "kind": "retarget",
+      "from": [
+        12,
+        2
+      ],
+      "to": [
+        8,
+        6
+      ],
+      "reason": "belief shifted 0.55 nats since plan",
+      "position": [
+        6,
+        1
+      ]
+    },
+    {
+      "t": 26,
+      "kind": "retarget",
+      "from": [
+        16,
+        4
+      ],
+      "to": [
+        20,
+        5
+      ],
+      "reason": "new clue found",
+      "position": [
+        14,
+        4
+      ]
+    },
+    {
+      "t": 37,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (28,4) (utility 0.234) is out of range on current battery 27; recharging first",
+      "position": [
+        20,
+        5
+      ]
+    },
+    {
+      "t": 50,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        17,
+        10
+      ]
+    },
+    {
+      "t": 50,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.40",
+      "position": [
+        17,
+        10
+      ]
+    },
+    {
+      "t": 64,
+      "kind": "retarget",
+      "from": [
+        27,
+        4
+      ],
+      "to": [
+        26,
+        4
+      ],
+      "reason": "new clue found",
+      "position": [
+        23,
+        5
+      ]
+    },
+    {
+      "t": 65,
+      "kind": "retarget",
+      "from": [
+        26,
+        4
+      ],
+      "to": [
+        27,
+        5
+      ],
+      "reason": "planned route blocked by newly seen wall",
+      "position": [
+        24,
+        5
+      ]
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": true,
+    "location_error_cells": 0.0,
+    "status_correct": true,
+    "true_position": [
+      27,
+      5
+    ],
+    "true_status": "low_power",
+    "clues_found": "3/5",
+    "decoy_readings_received": 3,
+    "decoy_readings_flagged": 3,
+    "genuine_readings_flagged": 0
+  }
+}

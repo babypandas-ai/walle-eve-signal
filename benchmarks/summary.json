@@ -1,0 +1,194 @@
+{
+  "standard": {
+    "bayesian": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 63.2,
+      "mean_battery_used": 70.0,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.44,
+      "n": 25
+    },
+    "bayesian@2": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 51.2,
+      "mean_battery_used": 111.0,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.6,
+      "n": 25
+    },
+    "bayesian-naive": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 63.7,
+      "mean_battery_used": 70.2,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.52,
+      "n": 25
+    },
+    "greedy": {
+      "success_rate": 0.72,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 122.3,
+      "mean_battery_used": 233.9,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 2.32,
+      "n": 25
+    },
+    "random": {
+      "success_rate": 0.0,
+      "median_loc_error": 1.41,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": NaN,
+      "mean_battery_used": 450.6,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 0.28,
+      "n": 25
+    }
+  },
+  "decoys": {
+    "bayesian": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 0.96,
+      "mean_time_when_found": 92.7,
+      "mean_battery_used": 101.4,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.88,
+      "n": 25
+    },
+    "bayesian@2": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 70.6,
+      "mean_battery_used": 151.9,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.76,
+      "n": 25
+    },
+    "bayesian-naive": {
+      "success_rate": 0.64,
+      "median_loc_error": 0.0,
+      "status_accuracy": 0.32,
+      "mean_time_when_found": 167.3,
+      "mean_battery_used": 249.1,
+      "stranded_rate": 0.04,
+      "mean_clues_found": 1.92,
+      "n": 25
+    },
+    "greedy": {
+      "success_rate": 0.16,
+      "median_loc_error": 1.0,
+      "status_accuracy": 0.96,
+      "mean_time_when_found": 187.2,
+      "mean_battery_used": 421.4,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.4,
+      "n": 25
+    },
+    "random": {
+      "success_rate": 0.0,
+      "median_loc_error": 2.83,
+      "status_accuracy": 0.84,
+      "mean_time_when_found": NaN,
+      "mean_battery_used": 450.6,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 0.28,
+      "n": 25
+    }
+  },
+  "harsh": {
+    "bayesian": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 105.5,
+      "mean_battery_used": 111.8,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 0.8,
+      "n": 25
+    },
+    "bayesian@2": {
+      "success_rate": 1.0,
+      "median_loc_error": 0.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 76.1,
+      "mean_battery_used": 157.8,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 0.88,
+      "n": 25
+    },
+    "bayesian-naive": {
+      "success_rate": 0.76,
+      "median_loc_error": 0.0,
+      "status_accuracy": 0.64,
+      "mean_time_when_found": 124.1,
+      "mean_battery_used": 177.0,
+      "stranded_rate": 0.04,
+      "mean_clues_found": 0.6,
+      "n": 25
+    },
+    "greedy": {
+      "success_rate": 0.24,
+      "median_loc_error": 1.0,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": 151.2,
+      "mean_battery_used": 347.5,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 1.0,
+      "n": 25
+    },
+    "random": {
+      "success_rate": 0.0,
+      "median_loc_error": 2.83,
+      "status_accuracy": 1.0,
+      "mean_time_when_found": NaN,
+      "mean_battery_used": 393.1,
+      "stranded_rate": 0.0,
+      "mean_clues_found": 0.08,
+      "n": 25
+    }
+  },
+  "_calibration": {
+    "missions_without_contact": 87,
+    "brier_score": 0.1192,
+    "bins": [
+      {
+        "bin": "0.0-0.2",
+        "n": 33,
+        "mean_reported": 0.097,
+        "observed_hit_rate": 0.03
+      },
+      {
+        "bin": "0.2-0.4",
+        "n": 23,
+        "mean_reported": 0.291,
+        "observed_hit_rate": 0.13
+      },
+      {
+        "bin": "0.4-0.6",
+        "n": 14,
+        "mean_reported": 0.494,
+        "observed_hit_rate": 0.143
+      },
+      {
+        "bin": "0.6-0.8",
+        "n": 11,
+        "mean_reported": 0.7,
+        "observed_hit_rate": 0.636
+      },
+      {
+        "bin": "0.8-1.0",
+        "n": 6,
+        "mean_reported": 0.868,
+        "observed_hit_rate": 1.0
+      }
+    ]
+  }
+}

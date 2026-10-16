@@ -1,0 +1,404 @@
+{
+  "mission": "Downtown after the dust storm",
+  "agent": "team of 2 x bayesian",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": true,
+    "time_used": 56,
+    "time_budget": 400,
+    "battery_remaining": 161.0,
+    "battery_consumed": 115.0,
+    "scans": 12,
+    "recharges": 8,
+    "distance_travelled": 91,
+    "robots": [
+      {
+        "robot": "WALL-E",
+        "moves": 45,
+        "scans": 7,
+        "recharges": 4,
+        "battery_used": 59.0,
+        "battery_left": 76.0,
+        "end": "reported"
+      },
+      {
+        "robot": "M-O",
+        "moves": 46,
+        "scans": 5,
+        "recharges": 4,
+        "battery_used": 56.0,
+        "battery_left": 85.0,
+        "end": "reported"
+      }
+    ]
+  },
+  "evidence": {
+    "clues": [
+      {
+        "id": "log-1",
+        "type": "beacon_log",
+        "position": [
+          12,
+          2
+        ],
+        "description": "Corrupted beacon log fragment: EVE x in [22, 27]",
+        "t": 14
+      },
+      {
+        "id": "tracks-1",
+        "type": "hover_tracks",
+        "position": [
+          16,
+          9
+        ],
+        "description": "Fresh hover-scorch tracks pointing ~55 deg",
+        "t": 28
+      },
+      {
+        "id": "plant",
+        "type": "plant",
+        "position": [
+          25,
+          6
+        ],
+        "description": "A seedling in an old boot! EVE must be within 4 cells",
+        "t": 52
+      },
+      {
+        "id": "contact",
+        "type": "visual_contact",
+        "position": [
+          27,
+          5
+        ],
+        "description": "Visual contact, EVE looks low_power",
+        "t": 56
+      }
+    ],
+    "signal": {
+      "scans": 12,
+      "detections": 6,
+      "no_signal": 6,
+      "strongest": {
+        "t": 55,
+        "position": [
+          25,
+          5
+        ],
+        "detected": true,
+        "strength": 39.96,
+        "bearing_deg": 80.5,
+        "auth": 0.75,
+        "spoof_prob": 0.0,
+        "spoof_prob_hindsight": 0.0
+      },
+      "suspected_spoofs": [
+        {
+          "t": 24,
+          "position": [
+            15,
+            5
+          ],
+          "detected": true,
+          "strength": 13.48,
+          "bearing_deg": 12.8,
+          "auth": 0.37,
+          "spoof_prob": 0.836,
+          "spoof_prob_hindsight": 0.942
+        },
+        {
+          "t": 38,
+          "position": [
+            17,
+            9
+          ],
+          "detected": true,
+          "strength": 21.34,
+          "bearing_deg": 141.8,
+          "auth": 0.28,
+          "spoof_prob": 0.995,
+          "spoof_prob_hindsight": 1.0
+        },
+        {
+          "t": 45,
+          "position": [
+            20,
+            6
+          ],
+          "detected": true,
+          "strength": 22.56,
+          "bearing_deg": 154.5,
+          "auth": 0.41,
+          "spoof_prob": 0.997,
+          "spoof_prob_hindsight": 0.999
+        }
+      ],
+      "learned_spoof_rate": 0.263,
+      "suspected_decoy_transmitter": {
+        "position": [
+          26,
+          19
+        ],
+        "p_within_1": 0.513
+      }
+    }
+  },
+  "inference": {
+    "eve_location": [
+      27,
+      5
+    ],
+    "p_at_cell": 1.0,
+    "p_within_1_cell": 1.0,
+    "credible_region_90_cells": 1,
+    "posterior_mean": [
+      27.0,
+      5.0
+    ],
+    "status": "low_power",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 1.0,
+      "damaged": 0.0
+    }
+  },
+  "confidence": {
+    "location": 1.0,
+    "location_label": "HIGH",
+    "status": 1.0,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "EVE is in low-power standby at (27, 5). Carry her to the nearest charger (17, 10) (~11 cells) and recharge her before attempting to wake her.",
+  "strategy_changes": [
+    {
+      "t": 7,
+      "kind": "retarget",
+      "from": [
+        12,
+        2
+      ],
+      "to": [
+        10,
+        10
+      ],
+      "reason": "belief shifted 0.67 nats since plan",
+      "position": [
+        5,
+        1
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 7,
+      "kind": "retarget",
+      "from": [
+        21,
+        1
+      ],
+      "to": [
+        21,
+        0
+      ],
+      "reason": "belief shifted 0.67 nats since plan",
+      "position": [
+        6,
+        0
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 14,
+      "kind": "retarget",
+      "from": [
+        10,
+        10
+      ],
+      "to": [
+        8,
+        5
+      ],
+      "reason": "new clue found",
+      "position": [
+        7,
+        6
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 14,
+      "kind": "retarget",
+      "from": [
+        21,
+        0
+      ],
+      "to": [
+        15,
+        5
+      ],
+      "reason": "new clue found",
+      "position": [
+        12,
+        0
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 27,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (26,1) (utility 0.131) is out of range on current battery 39; recharging first",
+      "position": [
+        12,
+        5
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 28,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (25,2) (utility 0.129) is out of range on current battery 39; recharging first",
+      "position": [
+        14,
+        9
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 36,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        17,
+        10
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 41,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        17,
+        10
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 45,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.36",
+      "position": [
+        20,
+        6
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 45,
+      "kind": "retarget",
+      "from": [
+        22,
+        12
+      ],
+      "to": [
+        26,
+        7
+      ],
+      "reason": "belief shifted 0.50 nats since plan",
+      "position": [
+        18,
+        12
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 51,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.82",
+      "position": [
+        20,
+        8
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 51,
+      "kind": "retarget",
+      "from": [
+        26,
+        7
+      ],
+      "to": [
+        26,
+        6
+      ],
+      "reason": "new clue found",
+      "position": [
+        20,
+        8
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 52,
+      "kind": "retarget",
+      "from": [
+        26,
+        4
+      ],
+      "to": [
+        25,
+        5
+      ],
+      "reason": "new clue found",
+      "position": [
+        23,
+        5
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 54,
+      "kind": "retarget",
+      "from": [
+        26,
+        6
+      ],
+      "to": [
+        27,
+        6
+      ],
+      "reason": "belief shifted 0.50 nats since plan",
+      "position": [
+        23,
+        8
+      ],
+      "robot": "M-O"
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": true,
+    "location_error_cells": 0.0,
+    "status_correct": true,
+    "true_position": [
+      27,
+      5
+    ],
+    "true_status": "low_power",
+    "clues_found": "3/5",
+    "decoy_readings_received": 3,
+    "decoy_readings_flagged": 3,
+    "genuine_readings_flagged": 0
+  }
+}

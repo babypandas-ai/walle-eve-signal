@@ -1,0 +1,220 @@
+{
+  "mission": "Procedural wasteland",
+  "agent": "bayesian",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": true,
+    "time_used": 105,
+    "time_budget": 400,
+    "battery_remaining": 37.0,
+    "battery_consumed": 113.0,
+    "scans": 9,
+    "recharges": 5,
+    "distance_travelled": 87
+  },
+  "evidence": {
+    "clues": [
+      {
+        "id": "clue3",
+        "type": "hover_tracks",
+        "position": [
+          29,
+          5
+        ],
+        "description": "Fresh hover-scorch tracks pointing ~146 deg",
+        "t": 92
+      },
+      {
+        "id": "clue2",
+        "type": "debris",
+        "position": [
+          29,
+          10
+        ],
+        "description": "EVE armour fragment; scatter pattern says source within 6 cells",
+        "t": 102
+      },
+      {
+        "id": "clue5",
+        "type": "plant",
+        "position": [
+          32,
+          9
+        ],
+        "description": "A seedling in an old boot! EVE must be within 5 cells",
+        "t": 102
+      },
+      {
+        "id": "contact",
+        "type": "visual_contact",
+        "position": [
+          33,
+          12
+        ],
+        "description": "Visual contact, EVE looks damaged",
+        "t": 105
+      }
+    ],
+    "signal": {
+      "scans": 9,
+      "detections": 4,
+      "no_signal": 5,
+      "strongest": {
+        "t": 102,
+        "position": [
+          31,
+          9
+        ],
+        "detected": true,
+        "strength": 22.07,
+        "bearing_deg": 165.0,
+        "auth": 1.0,
+        "spoof_prob": 0.0,
+        "spoof_prob_hindsight": 0.0
+      },
+      "suspected_spoofs": [
+        {
+          "t": 19,
+          "position": [
+            14,
+            4
+          ],
+          "detected": true,
+          "strength": 9.03,
+          "bearing_deg": 221.9,
+          "auth": 0.29,
+          "spoof_prob": 0.901,
+          "spoof_prob_hindsight": 0.999
+        }
+      ],
+      "learned_spoof_rate": 0.178,
+      "suspected_decoy_transmitter": null
+    }
+  },
+  "inference": {
+    "eve_location": [
+      33,
+      12
+    ],
+    "p_at_cell": 1.0,
+    "p_within_1_cell": 1.0,
+    "credible_region_90_cells": 1,
+    "posterior_mean": [
+      33.0,
+      12.0
+    ],
+    "status": "damaged",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 0.0,
+      "damaged": 1.0
+    }
+  },
+  "confidence": {
+    "location": 1.0,
+    "location_label": "HIGH",
+    "status": 1.0,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "EVE is damaged at (33, 12). Stabilise her, avoid rubble on the way back, and carry her to the truck at (2, 8) for repairs.",
+  "strategy_changes": [
+    {
+      "t": 10,
+      "kind": "retarget",
+      "from": [
+        11,
+        6
+      ],
+      "to": [
+        14,
+        4
+      ],
+      "reason": "planned route blocked by newly seen wall",
+      "position": [
+        9,
+        6
+      ]
+    },
+    {
+      "t": 25,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (25,1) (utility 0.167) is out of range on current battery 36; recharging first",
+      "position": [
+        17,
+        2
+      ]
+    },
+    {
+      "t": 51,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        8
+      ]
+    },
+    {
+      "t": 92,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.39",
+      "position": [
+        28,
+        5
+      ]
+    },
+    {
+      "t": 92,
+      "kind": "retarget",
+      "from": [
+        29,
+        5
+      ],
+      "to": [
+        32,
+        9
+      ],
+      "reason": "new clue found",
+      "position": [
+        28,
+        5
+      ]
+    },
+    {
+      "t": 102,
+      "kind": "retarget",
+      "from": [
+        32,
+        9
+      ],
+      "to": [
+        32,
+        13
+      ],
+      "reason": "new clue found",
+      "position": [
+        31,
+        9
+      ]
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": true,
+    "location_error_cells": 0.0,
+    "status_correct": true,
+    "true_position": [
+      33,
+      12
+    ],
+    "true_status": "damaged",
+    "clues_found": "3/5",
+    "decoy_readings_received": 1,
+    "decoy_readings_flagged": 1,
+    "genuine_readings_flagged": 0
+  }
+}

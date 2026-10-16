@@ -1,0 +1,397 @@
+{
+  "mission": "Decoy gauntlet",
+  "agent": "team of 2 x bayesian",
+  "outcome": {
+    "end_reason": "reported",
+    "eve_located_visually": true,
+    "time_used": 69,
+    "time_budget": 400,
+    "battery_remaining": 173.0,
+    "battery_consumed": 147.0,
+    "scans": 12,
+    "recharges": 9,
+    "distance_travelled": 111,
+    "robots": [
+      {
+        "robot": "WALL-E",
+        "moves": 58,
+        "scans": 5,
+        "recharges": 5,
+        "battery_used": 70.0,
+        "battery_left": 96.0,
+        "end": "reported"
+      },
+      {
+        "robot": "M-O",
+        "moves": 53,
+        "scans": 7,
+        "recharges": 4,
+        "battery_used": 77.0,
+        "battery_left": 77.0,
+        "end": "reported"
+      }
+    ]
+  },
+  "evidence": {
+    "clues": [
+      {
+        "id": "clue4",
+        "type": "beacon_log",
+        "position": [
+          17,
+          9
+        ],
+        "description": "Corrupted beacon log fragment: EVE x in [26, 31]",
+        "t": 21
+      },
+      {
+        "id": "clue2",
+        "type": "power_cell",
+        "position": [
+          29,
+          6
+        ],
+        "description": "Discarded EVE power cell; drag marks lead within 5 cells",
+        "t": 68
+      },
+      {
+        "id": "contact",
+        "type": "visual_contact",
+        "position": [
+          26,
+          7
+        ],
+        "description": "Visual contact, EVE looks low_power",
+        "t": 69
+      }
+    ],
+    "signal": {
+      "scans": 12,
+      "detections": 8,
+      "no_signal": 4,
+      "strongest": {
+        "t": 9,
+        "position": [
+          6,
+          8
+        ],
+        "detected": true,
+        "strength": 38.68,
+        "bearing_deg": 240.3,
+        "auth": 0.55,
+        "spoof_prob": 0.954,
+        "spoof_prob_hindsight": 1.0
+      },
+      "suspected_spoofs": [
+        {
+          "t": 9,
+          "position": [
+            6,
+            8
+          ],
+          "detected": true,
+          "strength": 38.68,
+          "bearing_deg": 240.3,
+          "auth": 0.55,
+          "spoof_prob": 0.954,
+          "spoof_prob_hindsight": 1.0
+        },
+        {
+          "t": 10,
+          "position": [
+            4,
+            10
+          ],
+          "detected": true,
+          "strength": 31.24,
+          "bearing_deg": 197.7,
+          "auth": 0.29,
+          "spoof_prob": 0.974,
+          "spoof_prob_hindsight": 1.0
+        },
+        {
+          "t": 19,
+          "position": [
+            7,
+            10
+          ],
+          "detected": true,
+          "strength": 26.47,
+          "bearing_deg": 104.8,
+          "auth": 0.42,
+          "spoof_prob": 0.633,
+          "spoof_prob_hindsight": 0.999
+        },
+        {
+          "t": 21,
+          "position": [
+            16,
+            8
+          ],
+          "detected": true,
+          "strength": 16.77,
+          "bearing_deg": 254.0,
+          "auth": 0.6,
+          "spoof_prob": 0.776,
+          "spoof_prob_hindsight": 0.992
+        },
+        {
+          "t": 28,
+          "position": [
+            20,
+            10
+          ],
+          "detected": true,
+          "strength": 13.07,
+          "bearing_deg": 276.0,
+          "auth": 0.65,
+          "spoof_prob": 0.795,
+          "spoof_prob_hindsight": 0.989
+        },
+        {
+          "t": 45,
+          "position": [
+            5,
+            18
+          ],
+          "detected": true,
+          "strength": 37.15,
+          "bearing_deg": 327.9,
+          "auth": 0.74,
+          "spoof_prob": 0.997,
+          "spoof_prob_hindsight": 1.0
+        }
+      ],
+      "learned_spoof_rate": 0.36,
+      "suspected_decoy_transmitter": {
+        "position": [
+          1,
+          12
+        ],
+        "p_within_1": 0.913
+      }
+    }
+  },
+  "inference": {
+    "eve_location": [
+      26,
+      7
+    ],
+    "p_at_cell": 1.0,
+    "p_within_1_cell": 1.0,
+    "credible_region_90_cells": 1,
+    "posterior_mean": [
+      26.0,
+      7.0
+    ],
+    "status": "low_power",
+    "status_posterior": {
+      "active": 0.0,
+      "low_power": 0.999,
+      "damaged": 0.001
+    }
+  },
+  "confidence": {
+    "location": 1.0,
+    "location_label": "HIGH",
+    "status": 0.999,
+    "status_label": "HIGH"
+  },
+  "recommended_next_step": "EVE is in low-power standby at (26, 7). Carry her to the nearest charger (29, 19) (~12 cells) and recharge her before attempting to wake her.",
+  "strategy_changes": [
+    {
+      "t": 16,
+      "kind": "retarget",
+      "from": [
+        11,
+        10
+      ],
+      "to": [
+        2,
+        14
+      ],
+      "reason": "belief shifted 0.50 nats since plan",
+      "position": [
+        9,
+        10
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 16,
+      "kind": "retarget",
+      "from": [
+        22,
+        8
+      ],
+      "to": [
+        16,
+        8
+      ],
+      "reason": "belief shifted 0.71 nats since plan",
+      "position": [
+        12,
+        8
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 21,
+      "kind": "retarget",
+      "from": [
+        2,
+        14
+      ],
+      "to": [
+        7,
+        15
+      ],
+      "reason": "new clue found",
+      "position": [
+        6,
+        11
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 23,
+      "kind": "retarget",
+      "from": [
+        7,
+        15
+      ],
+      "to": [
+        2,
+        13
+      ],
+      "reason": "planned route blocked by newly seen wall",
+      "position": [
+        6,
+        13
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 35,
+      "kind": "retarget",
+      "from": [
+        12,
+        11
+      ],
+      "to": [
+        5,
+        18
+      ],
+      "reason": "belief shifted 1.27 nats since plan",
+      "position": [
+        7,
+        11
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 35,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (28,7) (utility 0.201) is out of range on current battery 38; recharging first",
+      "position": [
+        23,
+        13
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 45,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "RECHARGE",
+      "reason": "Best target (12,19) (utility 0.053) is out of range on current battery 29; recharging first",
+      "position": [
+        5,
+        18
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 51,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        29,
+        19
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 51,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.37",
+      "position": [
+        29,
+        19
+      ],
+      "robot": "M-O"
+    },
+    {
+      "t": 65,
+      "kind": "mode",
+      "from": "RECHARGE",
+      "to": "EXPLORE",
+      "reason": "Battery restored to 100; resuming search",
+      "position": [
+        2,
+        6
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 68,
+      "kind": "mode",
+      "from": "EXPLORE",
+      "to": "PURSUE",
+      "reason": "P(EVE near target)=0.84",
+      "position": [
+        1,
+        4
+      ],
+      "robot": "WALL-E"
+    },
+    {
+      "t": 68,
+      "kind": "retarget",
+      "from": [
+        1,
+        0
+      ],
+      "to": [
+        26,
+        6
+      ],
+      "reason": "new clue found",
+      "position": [
+        1,
+        4
+      ],
+      "robot": "WALL-E"
+    }
+  ],
+  "evaluation_vs_ground_truth": {
+    "eve_found": true,
+    "location_error_cells": 0.0,
+    "status_correct": true,
+    "true_position": [
+      26,
+      7
+    ],
+    "true_status": "low_power",
+    "clues_found": "2/6",
+    "decoy_readings_received": 6,
+    "decoy_readings_flagged": 6,
+    "genuine_readings_flagged": 0
+  }
+}
